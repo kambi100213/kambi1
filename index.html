@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Эта строчка обязательна! Она заставляет телефоны правильно масштабировать сайт -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный сайт</title>
+    <style>
+        /* Базовые настройки для всех устройств */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Шапка сайта */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Меню навигации */
+        nav {
+            background-color: #34495e;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Основной контейнер (для компьютеров — в ряд) */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px; /* Отступ между карточками */
+        }
+
+        /* Карточки с контентом */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex: 1; /* Карточки занимают равную ширину */
+        }
+
+        /* Подвал сайта */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА
+           Сработает, если ширина экрана меньше 768px
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Меню становится вертикальным */
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            /* Карточки выстраиваются друг под другом, а не в ряд */
+            .container {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Мой Адаптивный Сайт</h1>
+        <p>Отлично смотрится и на ПК, и на смартфоне</p>
+    </header>
+
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Услуги</a>
+        <a href="#">Контакты</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>Блок 1</h2>
+            <p>На компьютере эти три блока стоят в один ряд. На телефоне они автоматически выстроятся друг под другом.</p>
+        </div>
+        <div class="card">
+            <h2>Блок 2</h2>
+            <p>Попробуйте уменьшить ширину окна браузера на компьютере, чтобы увидеть, как сработает адаптация.</p>
+        </div>
+        <div class="card">
+            <h2>Блок 3</h2>
+            <p>Меню сверху также перестроится из горизонтального в вертикальное для удобства нажатия пальцем.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Все права защищены</p>
+    </footer>
+
+</body>
+</html>
